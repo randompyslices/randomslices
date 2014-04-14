@@ -42,7 +42,7 @@ if __name__ == '__main__':
 
     P = prob(M,N)
 
-    print ("M = {0}, N = {1}, P = {2:3.4f}".format(M,N,P))
+    print ("M = {0}, N = {1}, n = {2}, P = {3:3.4f}".format(M,N,n,P))
 
     ''' Try computing purely by running trials '''
     Pt = trials(M,N,n)
