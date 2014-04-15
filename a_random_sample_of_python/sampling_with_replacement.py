@@ -3,21 +3,13 @@
 from math import factorial
 from math import pow
 from random import randint
-from itertools import count
-
-def probgen(M):
-    num = den = 1.0*M
-    val = 1.0
-    while True:
-        val = yield val*(num/den)
-        num -= 1
 
 def prob(M,N):
-    g = probgen(M)
-    p = g.next()
-    for i in xrange(0,N-1):
-        p = g.send(p) 
-    return 1. - p
+    M = float(M)
+    p = 1.0
+    for i in xrange(0,N):
+       p = p * (M - i)/M
+    return 1.0 - p 
 
 def trials(M,N,n=100):
     ''' Run n trials creating a sample of N from a population size
