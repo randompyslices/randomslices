@@ -16,12 +16,13 @@ def sample_no_repeats(M,N):
         if len(set(s)) == N:
             return s
 
-print 'NumPy: ', timeit('sample_no_repeats(1000,100)', 
-                setup='from __main__ import sample_no_repeats',number=100)
-
 print 'randint: ', timeit('sample_without_repeats(1000,100)', 
-                setup = 'from __main__ import sample_without_repeats',number=100)
+        setup = 'from __main__ import sample_without_repeats',number=100)
 
-print 'random.sample: ', timeit('random.sample(xrange(0,1000),100)',setup='import random',number=100)
+print 'NumPy: ', timeit('sample_no_repeats(1000,100)', 
+        setup='from __main__ import sample_no_repeats',number=100)
+
+print 'random.sample: ', timeit('random.sample(xrange(0,1000),100)',
+        setup='import random',number=100)
 
 
