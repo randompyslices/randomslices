@@ -13,18 +13,16 @@ def prob(M,N):
 
 def trials(M,N,n=100):
     ''' Run n trials creating a sample of N from a population size
-        of M.  We could compute the probability directly of getting
-        repeats but just for the sake of matching the closed form
-        approach let's compute the probablity of sets without repeats
-        and do 1 - P
+        of M.  Count the number of outcomes with repeats.  When all
+        trials have been run divide the count by the number of 
+        trials to get the probability of samples with repeats.
     '''
-    no_repeats = 0
+    repeats = 0
     for j in xrange(n):
-        s2 = [randint(0,M) for j in xrange(0,N)]
-        if len(set(s2)) == N:
-            no_repeats += 1
-    ''' Compute the probability based on n trials '''
-    return 1. - float(no_repeats)/n
+        s = [randint(0,M) for j in xrange(0,N)]
+        if len(set(s)) != N:
+            repeats += 1
+    return float(repeats)/n
     
 if __name__ == '__main__':
     
