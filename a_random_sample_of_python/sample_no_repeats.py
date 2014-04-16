@@ -16,6 +16,8 @@ def sample_no_repeats(M,N):
         if len(set(s)) == N:
             return s
 
+print 'Timing 3 approaches to obtaining a sample without repeats...'
+
 print 'randint: ', timeit('sample_without_repeats(1000,100)', 
         setup = 'from __main__ import sample_without_repeats',number=100)
 
