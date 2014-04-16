@@ -47,7 +47,7 @@ if __name__ == '__main__':
         Pn = factorial(M)/(factorial(M-N)*pow(M,N))
         Pc = 1. - Pn
         print('Probability computed with closed form = {}'.format(Pc))
-        print('Difference between closed form and iterative: {}'
+        print('Difference between closed form and iterative: {:3.6f}'
                 .format(abs(Pc-P)))
     except Exception as e:
         print ("Got exception from closed form calculation: " + str(e))
